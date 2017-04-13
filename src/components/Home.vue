@@ -1,13 +1,18 @@
 <template>
-  <div class="c-home__content">
-    <kitten-list :kittens="kittens"></kitten-list>
+  <div>
+    <search-input></search-input>
     <kitten-detail :kitten="kittens[0]"></kitten-detail>
+    <div class="c-home__content">
+      <kitten-list :kittens="kittens"></kitten-list>
+    </div>
   </div>
+
 </template>
 
 <script>
 import KittenList from './KittenList'
 import KittenDetail from './KittenDetail'
+import SearchInput from './SearchInput'
 export default {
   name: 'home',
   data () {
@@ -71,7 +76,8 @@ export default {
   },
   components: {
     KittenList,
-    KittenDetail
+    KittenDetail,
+    SearchInput
   }
 }
 </script>
@@ -79,6 +85,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .c-home__content {
-  padding: 60px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 120px;
 }
 </style>
