@@ -8,7 +8,7 @@
                 </div>
             </md-toolbar>
 
-             <img class="c-kitten-detail__img" v-bind:src="kitten.picture">
+            <img class="c-kitten-detail__img" v-bind:src="kitten.picture">
             <div class="c-kitten-detail__info">Age: {{kitten.age}} an(s)</div>
             <div class="c-kitten-detail__info">Sexe: {{kitten.gender}}</div>
             <div class="c-kitten-detail__info">{{kitten.type}}</div>

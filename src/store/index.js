@@ -20,7 +20,6 @@ export default new Vuex.Store({
   },
   mutations: {
     [types.SET_KITTENS] (state, kittens) {
-      console.log('OK GOOGLE', kittens)
       state.kittens = kittens
     }
   },

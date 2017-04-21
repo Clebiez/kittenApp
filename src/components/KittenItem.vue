@@ -39,4 +39,8 @@ export default {
 .md-title {
   color: black;
 }
+img {
+  width: 300px;
+  min-height: 225px;
+}
 </style>
