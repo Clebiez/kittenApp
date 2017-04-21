@@ -1,0 +1,26 @@
+{
+    "kittens": [
+        {
+            "id": 0,
+            "name": "Haribo",
+            "age": 2,
+            "picture": "http://www.corsaire-editions.com/pub/fond-ecran-chaton.jpg",
+            "gender": "Mâle",
+            "type": "Chat bonbon",
+            "size": 36,
+            "weight": 1.2,
+            "aptitudes": ["Joueur", "Câlin"]
+        },
+        {
+            "id": 1,
+            "name": "Tagada",
+            "age": 1,
+            "picture": "http://www.monchatonetmoi.com/upload/images/idees-du-jeux-pour-chaton.jpg",
+            "gender": "Mâle",
+            "type": "Chat fraise",
+            "size": 31,
+            "weight": 0.6,
+            "aptitudes": ["Flemmard", "Câlin"]
+        }
+    ]
+}
