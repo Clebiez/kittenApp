@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!--<search-input></search-input>-->
-    <!-- <kitten-detail></kitten-detail> -->
+    <kitten-info></kitten-info>
     <div class="c-home__content">
       <kitten-list :kittens="getKittens"></kitten-list>
     </div>
@@ -11,8 +10,7 @@
 
 <script>
 import KittenList from './KittenList'
-import KittenDetail from './KittenDetail'
-import SearchInput from './SearchInput'
+import KittenInfo from './KittenInfo'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'home',
@@ -22,8 +20,7 @@ export default {
   },
   components: {
     KittenList,
-    KittenDetail,
-    SearchInput
+    KittenInfo
   },
   created () {
     this.retrieveKittens()
@@ -50,6 +47,6 @@ export default {
   position: absolute;
   width: 100%;
   bottom: 0;
-  top: 120px;
+  top: 64px;
 }
 </style>

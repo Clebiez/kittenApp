@@ -10,12 +10,16 @@
         </md-card-header>
 
         <md-card-actions>
-          <md-button class="md-icon-button md-raised md-primary">
-            <md-icon>visibility</md-icon>
-          </md-button>
-          <md-button class="md-icon-button md-raised md-warn">
-            <md-icon>delete</md-icon>
-          </md-button>
+          <div @click="viewKitten">
+            <md-button class="md-icon-button md-raised md-primary">
+                <md-icon>visibility</md-icon>
+              </md-button>
+          </div>
+          <div>
+            <md-button class="md-icon-button md-raised md-warn">
+              <md-icon>delete</md-icon>
+            </md-button>
+          </div>
         </md-card-actions>
       </md-card>
   </div>
@@ -30,6 +34,11 @@ export default {
     return {
 
     }
+  },
+  methods: {
+    viewKitten () {
+      this.$store.dispatch('kittenClicked', this.kitten.id)
+    }
   }
 }
 </script>
@@ -38,6 +47,9 @@ export default {
 <style scoped>
 .md-title {
   color: black;
+}
+.md-icon-button {
+  margin: 10px !important;
 }
 img {
   width: 300px;

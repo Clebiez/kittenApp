@@ -11,16 +11,27 @@ const debug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
   strict: debug,
   state: {
-    kittens: []
+    kittens: [],
+    currentKittenViewed: {}
   },
   getters: {
     getKittens: state => {
       return state.kittens
+    },
+    getCurrentKittenViewed: state => {
+      return state.currentKittenViewed
     }
   },
   mutations: {
     [types.SET_KITTENS] (state, kittens) {
       state.kittens = kittens
+    },
+    [types.OPEN_KITTEN_MODAL] (state, kittenId) {
+      console.log('OPEN KITTEN MODAL')
+      state.currentKittenViewed = state.kittens[kittenId]
+    },
+    [types.CLOSE_KITTEN_MODAL] (state) {
+      state.currentKittenViewed = undefined
     }
   },
   actions: {
@@ -28,6 +39,9 @@ export default new Vuex.Store({
       Vue.http.get('http://localhost:3000/kittens').then(data => {
         commit(types.SET_KITTENS, data.body)
       })
+    },
+    kittenClicked ({ commit }, kittenId) {
+      commit(types.OPEN_KITTEN_MODAL, kittenId)
     }
   }
 })
