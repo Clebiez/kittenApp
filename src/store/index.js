@@ -27,11 +27,8 @@ export default new Vuex.Store({
       state.kittens = kittens
     },
     [types.OPEN_KITTEN_MODAL] (state, kittenId) {
-      console.log('OPEN KITTEN MODAL')
-      state.currentKittenViewed = state.kittens[kittenId]
-    },
-    [types.CLOSE_KITTEN_MODAL] (state) {
       state.currentKittenViewed = undefined
+      state.currentKittenViewed = state.kittens[kittenId]
     }
   },
   actions: {
