@@ -1,5 +1,5 @@
 <template>
-    <div class="c-kitten-info" v-if="kitten">
+    <div class="c-kitten-info">
         <md-sidenav class="md-right md-warn" ref="rightSidenav">
             <md-toolbar class="md-warn">
                 <div class="md-toolbar-container">
@@ -8,7 +8,7 @@
             </md-toolbar>
 
             <img class="c-kitten-info__img" v-bind:src="kitten.picture">
-            <div class="c-kitten-info__item">Age: {{kitten.age}} an(s)</div>
+            <div class="c-kitten-info__item">Age: {{kitten.age}} ans</div>
             <div class="c-kitten-info__item">Sexe: {{kitten.gender}}</div>
             <div class="c-kitten-info__item">{{kitten.type}}</div>
             <div class="c-kitten-info__item">Taille: {{kitten.size}} cm</div>
@@ -29,14 +29,15 @@ export default {
   computed: {
     kitten () {
       return this.$store.state.currentKittenViewed
+    },
+    toggle () {
+      return this.$store.state.kittenInfoOpened
     }
   },
   watch: {
-    kitten () {
+    toggle () {
       this.$refs.rightSidenav.toggle()
     }
-  },
-  methods: {
   }
 }
 </script>

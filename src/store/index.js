@@ -12,23 +12,18 @@ export default new Vuex.Store({
   strict: debug,
   state: {
     kittens: [],
-    currentKittenViewed: {}
-  },
-  getters: {
-    getKittens: state => {
-      return state.kittens
-    },
-    getCurrentKittenViewed: state => {
-      return state.currentKittenViewed
-    }
+    currentKittenViewed: {},
+    kittenInfoOpened: false
   },
   mutations: {
     [types.SET_KITTENS] (state, kittens) {
       state.kittens = kittens
     },
-    [types.OPEN_KITTEN_MODAL] (state, kittenId) {
-      state.currentKittenViewed = undefined
+    [types.SET_CURRENT_KITTEN_VIEWED] (state, kittenId) {
       state.currentKittenViewed = state.kittens[kittenId]
+    },
+    [types.TOGGLE_KITTEN_INFO] (state) {
+      state.kittenInfoOpened = !state.kittenInfoOpened
     }
   },
   actions: {
@@ -38,7 +33,8 @@ export default new Vuex.Store({
       })
     },
     kittenClicked ({ commit }, kittenId) {
-      commit(types.OPEN_KITTEN_MODAL, kittenId)
+      commit(types.SET_CURRENT_KITTEN_VIEWED, kittenId)
+      commit(types.TOGGLE_KITTEN_INFO)
     }
   }
 })

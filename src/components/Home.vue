@@ -2,7 +2,7 @@
   <div>
     <kitten-info></kitten-info>
     <div class="c-home__content">
-      <kitten-list :kittens="getKittens"></kitten-list>
+      <kitten-list :kittens="kittens"></kitten-list>
     </div>
   </div>
 
@@ -11,7 +11,7 @@
 <script>
 import KittenList from './KittenList'
 import KittenInfo from './KittenInfo'
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
   name: 'home',
   data () {
@@ -26,9 +26,9 @@ export default {
     this.retrieveKittens()
   },
   computed: {
-    ...mapGetters([
-      'getKittens'
-    ])
+    kittens () {
+      return this.$store.state.kittens
+    }
   },
   methods: {
     ...mapActions([

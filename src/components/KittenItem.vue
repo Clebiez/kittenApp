@@ -13,7 +13,7 @@
           <div @click="viewKitten">
             <md-button class="md-icon-button md-raised md-primary">
                 <md-icon>visibility</md-icon>
-              </md-button>
+            </md-button>
           </div>
           <div>
             <md-button class="md-icon-button md-raised md-warn">
