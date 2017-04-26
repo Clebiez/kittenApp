@@ -11,7 +11,6 @@
 <script>
 import KittenList from './KittenList'
 import KittenInfo from './KittenInfo'
-import { mapActions } from 'vuex'
 export default {
   name: 'home',
   data () {
@@ -23,19 +22,11 @@ export default {
     KittenInfo
   },
   created () {
-    this.retrieveKittens()
+    this.$store.dispatch('retrieveKittens')
   },
   computed: {
     kittens () {
       return this.$store.state.kittens
-    }
-  },
-  methods: {
-    ...mapActions([
-      'retrieveKittens'
-    ]),
-    kittens () {
-      return this.getKittens()
     }
   }
 }
